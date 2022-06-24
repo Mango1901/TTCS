@@ -1,0 +1,22 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <attribute name="class" value="checkout-index-index"/>
+        <referenceContainer name="content">
+            <block
+                class="Magenest\PaymentEPay\Block\Customer\InstallmentPayment"
+                name="epay_listcard"
+                cacheable="false"
+                template="customer/installmentpayment.phtml">
+            </block>
+        </referenceContainer>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logoPathResolver" xsi:type="object">Magenest\CustomCheckout\ViewModel\Block\Html\Header\LogoPathResolver</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="nav-toggle" remove="true" />
+        <referenceContainer name="page.header.block" remove="true" />
+        <referenceBlock name="menu.bottom.mobile" remove="true" />
+        <referenceContainer name="header-bannerPrompteur" remove="true" />
+    </body>
+</page>
